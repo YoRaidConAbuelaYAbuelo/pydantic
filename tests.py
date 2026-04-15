@@ -8,11 +8,6 @@ from models.spell import Spell
 from storage.database import save_characters, load_characters
 from main import add_character, add_item
 
-
-# ------------------------------------------------------------
-# 1. SUCCESSFUL OBJECT CREATION
-# ------------------------------------------------------------
-
 class TestModels(unittest.TestCase):
 
     def test_character_valid(self):
@@ -28,11 +23,6 @@ class TestModels(unittest.TestCase):
         spell = Spell(name="Fireball", mana_cost=5)
         self.assertEqual(spell.mana_cost, 5)
 
-
-# ------------------------------------------------------------
-# 2. VALIDATION ERRORS
-# ------------------------------------------------------------
-
 class TestValidation(unittest.TestCase):
 
     def test_character_invalid_stat(self):
@@ -46,11 +36,6 @@ class TestValidation(unittest.TestCase):
     def test_spell_invalid_mana(self):
         with self.assertRaises(ValueError):
             Spell(name="Dark Magic", mana_cost=-1)
-
-
-# ------------------------------------------------------------
-# 3. CRUD OPERATIONS
-# ------------------------------------------------------------
 
 class TestCRUD(unittest.TestCase):
 
@@ -73,8 +58,6 @@ class TestCRUD(unittest.TestCase):
                 self.assertEqual(len(updated.inventory), 1)
                 self.assertEqual(updated.inventory[0].name, "Axe")
 
-# ------------------------------------------------------------
-# MANUAL EXECUTION SUPPORT (not used by pytest)
-# ------------------------------------------------------------
+
 if __name__ == "__main__":
     unittest.main()
