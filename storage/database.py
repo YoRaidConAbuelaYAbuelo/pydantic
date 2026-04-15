@@ -7,7 +7,7 @@ DB_FILE = Path("storage/database.json")
 
 def load_characters() -> List[Character]:
     if not DB_FILE.exists() or DB_FILE.stat().st_size == 0:
-        return []  # empty DB file returns empty list
+        return [] 
     try:
         with DB_FILE.open("r", encoding="utf-8") as f:
             data = json.load(f)
