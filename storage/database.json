@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Legolas",
+        "strength": 18,
+        "intelligence": 8,
+        "inventory": [
+            {
+                "name": "Axe",
+                "quantity": 2
+            }
+        ],
+        "spells": []
+    }
+]
